@@ -46,7 +46,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Cache turborepo for Android
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ env.TURBO_CACHE_DIR }}
           key: ${{ runner.os }}-turborepo-android-${{ hashFiles('yarn.lock') }}
@@ -70,7 +70,7 @@ jobs:
 
       - name: Cache Gradle
         if: env.turbo_cache_hit != 1
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             ~/.gradle/wrapper
@@ -170,7 +170,7 @@ jobs:
           podfile-path: example/ios/Podfile.lock
 
       - name: Cache turborepo for iOS
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ env.TURBO_CACHE_DIR }}
           key: ${{ runner.os }}-turborepo-ios-${{ hashFiles('yarn.lock') }}
@@ -188,7 +188,7 @@ jobs:
       - name: Cache cocoapods
         if: env.turbo_cache_hit != 1
         id: cocoapods-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             **/ios/Pods
