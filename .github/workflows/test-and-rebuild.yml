@@ -130,7 +130,7 @@ jobs:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '19'
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: test-apk
           path: example/android/app/build/outputs/apk
